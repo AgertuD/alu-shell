@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
-
+# Initialize a counter
 count=1
 
+# Loop while count is less than or equal to 10
 while [ $count -le 10 ]
 do
     if [ $count -eq 9 ]; then
         echo "Best School"
-        echo "Hi" 
+        echo "Hi"  # Display Hi on a new line for the 9th iteration
     else
         echo "Best School"
     fi
-    ((count++)) 
+    ((count++))  # Increment the counter
 done
