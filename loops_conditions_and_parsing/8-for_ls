@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-#!/bin/bash
+# this script displays the time for 12 hours and 59 minutes:
+# display hours from 0 to 12
+# display minutes from 1 to 59
 
-# Loop through the files and directories in the current directory
-for item in *; do
-    # Check if the item is a regular file or directory and not hidden
-    if [[ -f $item || -d $item ]]; then
-        # Extract the part of the name after the first dash
-        name_after_dash="${item#*-}"
-        
-        # Display the result if there's a name after the dash
-        if [[ $name_after_dash != "$item" ]]; then
-            echo "$name_after_dash"
-        fi
-    fi
+h=0
+m=1
+while [ $h -le 12 ]; do
+    echo "Hour: ${h}"
+    while [ $m -lt 60 ]; do
+        echo $m
+        (( m+=1 ))
+    done
+    (( m=1 ))
+    (( h+=1 ))
 done
